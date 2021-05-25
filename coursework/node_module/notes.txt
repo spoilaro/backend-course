@@ -1,0 +1,12 @@
+Notes for NODE.JS learning module
+
+- Used most of the path module's methods
+    - Like join and basename
+    - Overall quite basic stuff
+
+- Some of the fs module's methods were ones I have used before
+    and it was good to refresh my memory on those. Methods were 
+    quite easy to use and understand and the VSCode intellisense
+    is a helpfull tool when not quite sure what the method in question
+    does.
+
