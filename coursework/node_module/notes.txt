@@ -10,3 +10,12 @@ Notes for NODE.JS learning module
     is a helpfull tool when not quite sure what the method in question
     does.
 
+- Os module was quite simple one. I had used similar modules and libraries
+    in other languages that are quite similar to this one. I felt it was quite 
+    easy to use and it was really intuitive too.
+
+
+- I had not used the url module before. It seemed quite useful and fun to use
+    considering Js's close relation to web. Module was quite intuitive to use.
+    
+
