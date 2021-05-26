@@ -19,3 +19,5 @@ Notes for NODE.JS learning module
     considering Js's close relation to web. Module was quite intuitive to use.
     
 
+- The "complete server" module was quite similar to express framwork
+    which I had used before. I think I was able to understand everything.
