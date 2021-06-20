@@ -1,0 +1,15 @@
+GET http://localhost:3000/dummies
+
+###
+
+POST http://localhost:3000/dummies
+Content-Type: application/json
+
+{
+    "name": "Joku",
+    "dummyToChannel": "Du"
+}
+
+###
+
+GET http://localhost:3000/dummies/60cf8dbce907d69105faa28a
