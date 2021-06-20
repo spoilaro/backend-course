@@ -32,6 +32,7 @@ router.post("/", (req, res) => {
 
   members.push(newMember);
   res.json(members);
+  //res.redirect("/");
 });
 
 router.put("/:id", (req, res) => {
@@ -47,6 +48,20 @@ router.put("/:id", (req, res) => {
 
         res.json({ msg: "Member was updated", mem });
       }
+    });
+  } else {
+    res.status(400).json({ msg: "Not found with id of " + req.params.id });
+  }
+});
+
+router.delete("/:id", (req, res) => {
+  var id = req.params.id;
+  const found = members.some((mem) => mem.id === parseInt(req.params.id));
+
+  if (found) {
+    res.json({
+      msg: "Member deleted",
+      members: members.filter((mem) => mem.id !== parseInt(req.params.id)),
     });
   } else {
     res.status(400).json({ msg: "Not found with id of " + req.params.id });
