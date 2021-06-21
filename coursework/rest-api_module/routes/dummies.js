@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 
 //Get one
 router.get("/:id", getDummy, (req, res) => {
-  res.send(res.dummy.name);
+  res.json(res.dummy);
 });
 
 //Create
@@ -32,15 +32,27 @@ router.post("/", async (req, res) => {
 });
 
 //Update
-router.patch("/:id", (req, res) => {});
+router.patch("/:id", getDummy, (req, res) => {
+  if (req.body.name != null) {
+    res.dummy.name = req.body.name;
+  }
+});
 
 //Delete
-router.delete("/:id", (req, res) => {});
+router.delete("/:id", getDummy, async (req, res) => {
+  try {
+    await res.dummy.remove();
+    res.json({ msg: "Dummy deleted" });
+  } catch (err) {
+    res.status(500).json({ msg: err.message });
+  }
+});
 
 async function getDummy(req, res, next) {
   let dummy;
   try {
-    dummy = await Dummy.findById(req.param.id);
+    console.log(req.param.id);
+    dummy = await Dummy.findById(req.params.id);
     if (dummy == null) {
       return res.status(404).json({ msg: "Can't find dummy" });
     }
