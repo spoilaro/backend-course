@@ -17,3 +17,12 @@ GET http://localhost:3000/dummies/60cf8dbce907d69105faa28a
 ###
 
 DELETE http://localhost:3000/dummies/60cf8dbce907d69105faa28a
+
+###
+
+PATCH  http://localhost:3000/dummies/60cf89b528e23d897ba76f75
+Content-Type: application/json
+
+{
+    "name": "Emppu"
+}

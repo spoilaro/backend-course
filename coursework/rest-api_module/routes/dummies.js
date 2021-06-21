@@ -32,9 +32,18 @@ router.post("/", async (req, res) => {
 });
 
 //Update
-router.patch("/:id", getDummy, (req, res) => {
+router.patch("/:id", getDummy, async (req, res) => {
   if (req.body.name != null) {
     res.dummy.name = req.body.name;
+  }
+  if (req.body.dummyToChannel != null) {
+    res.dummy.dummyToChannel = req.body.dummyToChannel;
+  }
+  try {
+    const updatedDummy = await res.dummy.save();
+    res.json(updatedDummy);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
   }
 });
 
