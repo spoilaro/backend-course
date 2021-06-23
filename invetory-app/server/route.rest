@@ -1,0 +1,19 @@
+POST http://localhost:3001/
+Content-Type: application/json
+
+{
+    "name": "Jo"
+}
+
+###
+
+GET http://localhost:3001/
+
+###
+
+PATCH http://localhost:3001/60d36294af09470b39311ae3
+Content-Type: application/json
+
+{
+    "newItem": "Piano" 
+}
