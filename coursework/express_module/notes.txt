@@ -1,0 +1,6 @@
+I had used express quite a bit before this course. I had created similar apis for my projects.
+For the most part this module was going through the same things that I had watched and learned before.
+The only thing that I hadn't used before was handlebars. I had used templating engine before with python's Jinja but 
+never with JavaScript because of the React and Vue like frameworks.
+
+20/6/2021

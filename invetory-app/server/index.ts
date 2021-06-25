@@ -2,6 +2,8 @@ import express, { Application, Request, Response } from "express";
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+const cors = require("cors");
+
 //Routes
 const userRoute = require("./Routes/UserRoute");
 
@@ -12,6 +14,7 @@ const User = require("./Models/User");
 const app: Application = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 //Use routes
 app.use("/", userRoute);

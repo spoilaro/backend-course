@@ -1,0 +1,5 @@
+- MongoDb was technology I was familiar with. I had not installed it ever locally
+    but used MongoDB Atlas service for my apis. 
+
+- Syntax for commands was pretty self explanatory and nothing really complicated
+    was showing. 
