@@ -65,7 +65,7 @@ router.post("/", function (req, res) { return __awaiter(void 0, void 0, void 0, 
         }
     });
 }); });
-//Delete
+//Delete User
 router.delete("/:id", getUser, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var error_2;
     return __generator(this, function (_a) {
@@ -135,9 +135,6 @@ router.patch("/update/:id", getUser, function (req, res) { return __awaiter(void
             case 0:
                 if (req.body.name != null) {
                     req.user.name = req.body.name;
-                }
-                if (req.body.items != null) {
-                    req.user.items = req.body.items;
                 }
                 _a.label = 1;
             case 1:
