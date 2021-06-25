@@ -11,16 +11,16 @@ GET http://localhost:3001/
 
 ### Add new item
 
-PATCH http://localhost:3001/60d5e3c51036f83d9737ac0d
+PATCH http://localhost:3001/60d5e8fac1c99647a2bb0bee
 Content-Type: application/json
 
 {
-    "newItem": "A" 
+    "newItem": "Piano" 
 }
 
 ### Delete user
 
-DELETE http://localhost:3001/60d35f5663c1c50a5e678791
+DELETE http://localhost:3001/60d5e3c51036f83d9737ac0d
 
 ### Update user name
 
