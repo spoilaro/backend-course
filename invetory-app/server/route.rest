@@ -2,7 +2,7 @@ POST http://localhost:3001/
 Content-Type: application/json
 
 {
-    "name": "Jo"
+    "name": "Jon",
 }
 
 ###
@@ -11,9 +11,22 @@ GET http://localhost:3001/
 
 ###
 
-PATCH http://localhost:3001/60d36294af09470b39311ae3
+PATCH http://localhost:3001/60d5e3c51036f83d9737ac0d
 Content-Type: application/json
 
 {
-    "newItem": "Piano" 
+    "newItem": "P" 
+}
+
+###
+
+DELETE http://localhost:3001/60d35f5663c1c50a5e678791
+
+###
+
+PATCH  http://localhost:3001/update/60d229eb28c1da0880630526
+Content-Type: application/json
+
+{
+    "name": "hula hula"
 }

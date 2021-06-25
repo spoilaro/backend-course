@@ -42,8 +42,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var mongoose = require("mongoose");
 require("dotenv").config();
-var User = require("./Models/User");
+var cors = require("cors");
+//Routes
+var userRoute = require("./Routes/UserRoute");
+//App init and middleware
 var app = express_1.default();
+app.use(express_1.default.json());
+app.use(express_1.default.urlencoded({ extended: true }));
+app.use(cors());
+//Use routes
+app.use("/", userRoute);
+//Connect to database
 mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -55,37 +64,15 @@ db.on("error", function () {
 db.once("open", function () {
     console.log("Database connected");
 });
+//Run server
+//React uses port 3000 as default
 var PORT = process.env.PORT || 3001;
-app.use(express_1.default.json());
-app.use(express_1.default.urlencoded({ extended: true }));
 app.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         return [2 /*return*/, res.status(200).json({ msg: "This is working" })];
     });
 }); });
 //Create user
-app.post("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var user, newUser, error_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                user = new User({
-                    name: req.body.name,
-                });
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, user.save()];
-            case 2:
-                newUser = _a.sent();
-                return [2 /*return*/, res.status(200).json({ msg: "Added new user", user: newUser })];
-            case 3:
-                error_1 = _a.sent();
-                return [2 /*return*/, res.status(400).json({ msg: error_1.message })];
-            case 4: return [2 /*return*/];
-        }
-    });
-}); });
 app.listen(PORT, function () {
     console.log("Server is running!");
 });

@@ -7,9 +7,6 @@ const cors = require("cors");
 //Routes
 const userRoute = require("./Routes/UserRoute");
 
-//Model
-const User = require("./Models/User");
-
 //App init and middleware
 const app: Application = express();
 app.use(express.json());
@@ -34,6 +31,7 @@ db.once("open", (): void => {
 });
 
 //Run server
+//React uses port 3000 as default
 const PORT = process.env.PORT || 3001;
 
 app.get("/", async (req: Request, res: Response): Promise<Response> => {
