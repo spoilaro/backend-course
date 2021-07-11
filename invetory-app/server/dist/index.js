@@ -51,7 +51,7 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use(cors());
 //Use routes
-app.use("/", userRoute);
+app.use("/api", userRoute);
 //Connect to database
 mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
@@ -74,5 +74,5 @@ app.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, func
 }); });
 //Create user
 app.listen(PORT, function () {
-    console.log("Server is running!");
+    console.log("Server is running in port ", PORT);
 });

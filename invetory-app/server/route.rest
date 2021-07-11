@@ -1,4 +1,6 @@
-POST http://localhost:3001/
+###Create user
+
+POST http://localhost:3001/api
 Content-Type: application/json
 
 {
@@ -7,24 +9,24 @@ Content-Type: application/json
 
 ### Get all users
 
-GET http://localhost:3001/
+GET http://localhost:3001/api
 
-### Add new item
+### Add new item - Change user id accorning to the ones you get in response
 
-PATCH http://localhost:3001/60d5e8fac1c99647a2bb0bee
+PATCH http://localhost:3001/api/60d5e8fac1c99647a2bb0bee
 Content-Type: application/json
 
 {
     "newItem": "Piano" 
 }
 
-### Delete user
+### Delete user - Change user id accorning to the ones you get in response
 
-DELETE http://localhost:3001/60d5e3c51036f83d9737ac0d
+DELETE http://localhost:3001/api/60d5e8fac1c99647a2bb0bee
 
-### Update user name
+### Update user name - Change user id accorning to the ones you get in response
 
-PATCH  http://localhost:3001/update/60d229eb28c1da0880630526
+PATCH  http://localhost:3001/api/update/60d229eb28c1da0880630526
 Content-Type: application/json
 
 {

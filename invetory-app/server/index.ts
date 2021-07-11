@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 //Use routes
-app.use("/", userRoute);
+app.use("/api", userRoute);
 
 //Connect to database
 mongoose.connect(process.env.DB_URI, {
@@ -41,5 +41,5 @@ app.get("/", async (req: Request, res: Response): Promise<Response> => {
 //Create user
 
 app.listen(PORT, (): void => {
-  console.log("Server is running!");
+  console.log("Server is running in port ", PORT);
 });
