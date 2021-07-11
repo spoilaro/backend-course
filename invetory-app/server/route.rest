@@ -4,7 +4,7 @@ POST http://localhost:3001/api
 Content-Type: application/json
 
 {
-    "name": "TestUser"
+    "name": "NewImproUser"
 }
 
 ### Get all users
@@ -13,22 +13,22 @@ GET http://localhost:3001/api
 
 ### Add new item - Change user id accorning to the ones you get in response
 
-PATCH http://localhost:3001/api/60d5e8fac1c99647a2bb0bee
+PATCH http://localhost:3001/api/60ea9c71735bdc07861f3385
 Content-Type: application/json
 
 {
-    "newItem": "Piano" 
+    "newItem": "MyItem" 
 }
 
 ### Delete user - Change user id accorning to the ones you get in response
 
-DELETE http://localhost:3001/api/60d5e8fac1c99647a2bb0bee
+DELETE http://localhost:3001/api/60ea9c71735bdc07861f3385
 
 ### Update user name - Change user id accorning to the ones you get in response
 
-PATCH  http://localhost:3001/api/update/60d229eb28c1da0880630526
+PATCH  http://localhost:3001/api/update/60ea9c71735bdc07861f3385
 Content-Type: application/json
 
 {
-    "name": "SomeOne"
+    "name": "ImproNewName"
 }
